@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../utils/cn";
+import { HoverBorderGradient } from "./HoverBorderGradient";
 
 export function Button({
     borderRadius = "12px",
@@ -44,6 +45,7 @@ export function Button({
                 className="absolute inset-0"
                 style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
             >
+
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
@@ -53,7 +55,7 @@ export function Button({
                     />
                 </MovingBorder>
             </div>
-
+            {/* <HoverBorderGradient> */}
             <div
                 className={cn(
                     "relative bg-white-900/[0.8] px-[10px] border border-white-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-auto p-[18px] text-sm antialiased",
@@ -65,6 +67,7 @@ export function Button({
             >
                 {children}
             </div>
+            {/* </HoverBorderGradient> */}
         </Component>
     );
 }

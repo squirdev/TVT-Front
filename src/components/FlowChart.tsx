@@ -13,6 +13,7 @@ import InfoDarkImg from "../assets/info_dark.svg";
 import InfoLightImg from "../assets/info_light.svg";
 import NormalBtn from "./common/NormalBtn";
 import RightImg from "../assets/right.svg"
+import { HoverBorderGradient } from "./common/HoverBorderGradient";
 
 
 export default function FlowChart(props: any) {
@@ -38,12 +39,22 @@ export default function FlowChart(props: any) {
                         Harness the power of blockchain to trace products globally
                     </h1>
             }
-            <NormalBtn className="mt-8">
+            <div className="mt-[20px]">
+                <HoverBorderGradient
+                    containerClassName="rounded-full"
+                    as="button"
+                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
+                >
+                    Whitepaper
+                    <img src={RightImg} alt="right" />
+                </HoverBorderGradient>
+            </div>
+            {/* <NormalBtn className="mt-8">
                 <span className="flex flex-row items-center gap-4">
                     Whitepaper
                     <img src={RightImg} alt="right" />
                 </span>
-            </NormalBtn>
+            </NormalBtn> */}
         </div>
     )
 }

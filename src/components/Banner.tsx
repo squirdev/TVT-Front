@@ -7,14 +7,11 @@ import SolanaImg from "../assets/solana.svg"
 import { useTheme } from "../context/ThemeProvider"
 import ChainImgDark from "../assets/chain_dark.svg";
 import ChainImgLight from "../assets/chain_light.svg";
-
-
+import { HoverBorderGradient } from "./common/HoverBorderGradient"
+import { motion } from "framer-motion"
 
 export default function Banner(props: any) {
-
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1028px)' })
-
-
     const { theme } = useTheme()
 
     return (
@@ -47,19 +44,29 @@ export default function Banner(props: any) {
                         </span>
                     </h1>
             }
-            <NormalBtn className="mt-5">
-                <span className="flex flex-row items-center gap-4">
+            <div className="mt-[20px]">
+                <HoverBorderGradient
+                    containerClassName="rounded-full"
+                    as="button"
+                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
+                >
                     Register Now
                     <img src={RightImg} alt="right" />
-                </span>
-            </NormalBtn>
-            <img src={TVTImg} alt="tvt" className="mt-[80px]" />
-            <div className="flex flex-row items-center mt-[40px] gap-[60px]">
-                <p className="font-Conthrax text-[23px] font-[600] bg-gradient-to-r from-[#124968] via-[#3AE7ED]  to-[#139BD7]  text-transparent bg-clip-text">
-                    P O W E R E D  B Y
-                </p>
-                <img src={SolanaImg} />
+                </HoverBorderGradient>
             </div>
-        </div>
+            <motion.div whileHover={{
+                scale: 1.2,
+                transition: { duration: 1 },
+            }} className="flex flex-col items-center">
+                <img src={TVTImg} alt="tvt" className="mt-[80px]" />
+                <div className="flex flex-row items-center mt-[40px] gap-[60px]">
+                    <p className="font-Conthrax text-[23px] font-[600] bg-gradient-to-r from-[#124968] via-[#3AE7ED]  to-[#139BD7]  text-transparent bg-clip-text">
+                        P O W E R E D  B Y
+                    </p>
+                    <img src={SolanaImg} />
+                </div>
+            </motion.div>
+        </div >
     )
 }
+

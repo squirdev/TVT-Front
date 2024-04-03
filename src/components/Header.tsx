@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive"
 import LogoImg from "../assets/logo.svg"
 import Switch from "./common/Switch"
 import SignUpBtn from "./common/SignUpBtn"
+import { HoverBorderGradient } from "./common/HoverBorderGradient"
 
 
 export default function Header(props: any) {
@@ -45,7 +46,13 @@ export default function Header(props: any) {
                 }
             </ul>
             <Switch />
-            <SignUpBtn />
+            <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
+            >
+                Sign Up
+            </HoverBorderGradient>
         </div>
     )
 }

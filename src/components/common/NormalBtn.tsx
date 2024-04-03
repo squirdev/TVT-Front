@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Button } from "./Moving-Border"
 
-
 export default function NormalBtn(props: any) {
     const { children, className } = props;
 
