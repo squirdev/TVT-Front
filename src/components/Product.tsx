@@ -12,12 +12,12 @@ export default function Product(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="flex flex-row items-start justify-center gap-6 w-full bg-white dark:bg-black mt-[160px]">
-            <div className="flex flex-col items-center">
+        <div className="flex flex-col md:flex-row items-start justify-center gap-6 w-full  bg-white dark:bg-black mt-[160px] px-[10px]">
+            <div className="w-full flex flex-col items-center md:items-end">
                 <ProductInfo />
                 <ProductFlow />
             </div>
-            <div className="flex flex-col items-center gap-4">
+            <div className="w-full flex flex-col items-center md:items-start gap-4">
                 <CertifyFlow />
                 <CertifyProduct />
                 <ProductTrack />

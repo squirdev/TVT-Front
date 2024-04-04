@@ -30,8 +30,8 @@ export default function ProductInfo(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="w-[552px] h-[620px] bg-[#f0eff0]  border border-solid border-[#d6d5da] dark:bg-black dark:border-white   dark:border-opacity-10 rounded-[20px] overflow-hidden p-[16px]">
-            <div className="flex flex-row items-center w-full h-[26px] rounded-t-[12px]  border border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 p-2 gap-1">
+        <div className="w-full md:w-[552px] h-full md:h-[620px] bg-[#f0eff0]  border border-solid border-[#d6d5da] dark:bg-black dark:border-white   dark:border-opacity-10 rounded-[20px] overflow-hidden p-2 md:p-[16px]">
+            <div className=" flex flex-row items-center w-full h-[26px] rounded-t-[12px]  border border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 p-2 gap-1">
                 <div className="w-[8px] h-[8px] rounded-full bg-[#FF4848]">
                 </div>
                 <div className="w-[8px] h-[8px] rounded-full bg-[#FFC01E]">
@@ -47,20 +47,20 @@ export default function ProductInfo(props: any) {
                     </span>
                 </p>
             </div>
-            <div className="flex z-10 flex-col items-start w-full h-[509px] rounded-b-[12px] border border-t-[0px] border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 px-[16px] pt-1 gap-1">
+            <div className=" flex z-10 flex-col items-start w-full md:h-[509px] rounded-b-[12px] border border-t-[0px] border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 px-[16px] pt-1 gap-1">
                 <motion.div whileHover={{
                     y: -20,
                     transition: { duration: 1 },
-                }} className="z-10 relative" >
+                }} className="z-10 relative w-full" >
                     <p className="text-[#393939] dark:text-white text-[16px] font-[400] z-10">
                         Product Number or Name
                     </p>
-                    <input className="w-[400px] h-[40px] border border-solid border-[#d6d5da] dark:border-[#DFE1E71A] dark:bg-[#F0E9FF05] dark:text-[#948FA0] rounded-[10px] p-[10px] outline-none mt-[12px]" placeholder="Product Number or Name" />
+                    <input className="w-full md:w-[400px] h-[40px] border border-solid border-[#d6d5da] dark:border-[#DFE1E71A] dark:bg-[#F0E9FF05] dark:text-[#948FA0] rounded-[10px] p-[10px] outline-none mt-[12px]" placeholder="Product Number or Name" />
                     <p className="text-[#393939] dark:text-white text-[16px] font-[400] mt-[28px]">
                         Type of Choice
                     </p>
                     <div className="flex flex-row items-center justify-between gap-2 mt-2">
-                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05]  w-[134px] h-[40px] rounded-[8px] p-[8px]">
+                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05]  w-[97px] md:w-[134px] h-[40px] rounded-[8px] p-1 md:p-[8px]">
                             {
                                 theme == "dark" ?
                                     <img src={ClothDarkImg} alt="cloth" className="w-[24px] h-[24px]" />
@@ -72,7 +72,7 @@ export default function ProductInfo(props: any) {
                                 Clothing
                             </p>
                         </div>
-                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05] w-[134px] h-[40px] rounded-[8px] p-[8px]">
+                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05] w-[97px] md:w-[134px] h-[40px] rounded-[8px] p-1 md:p-[8px]">
                             {
                                 theme == "dark" ?
                                     <img src={MeatDarkImg} alt="cloth" className="w-[24px] h-[24px]" />
@@ -83,7 +83,7 @@ export default function ProductInfo(props: any) {
                                 Meet
                             </p>
                         </div>
-                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05] w-[134px] h-[40px] rounded-[8px] p-[8px]">
+                        <div className="flex flex-row items-center bg-[#F6F5F6] dark:border-[#DFE1E71A] dark:border-[1px] dark:bg-[#F0E9FF05] w-[97px] md:w-[134px] h-[40px] rounded-[8px] p-1 md:p-[8px]">
                             <div className="flex items-center justify-center w-[24px] h-[24px] bg-white rounded-full">
                                 {
                                     theme == "dark" ?
@@ -100,8 +100,8 @@ export default function ProductInfo(props: any) {
                     <p className="text-[#393939] dark:text-white text-[16px] font-[400] mt-[28px]">
                         Choose Location
                     </p>
-                    <div className="grid grid-cols-2 gap-2 ">
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A] w-[230px] h-[80px]">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 mt-[10px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A] w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={FRImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">
@@ -122,7 +122,7 @@ export default function ProductInfo(props: any) {
                                 }
                             </div>
                         </div>
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-[230px] h-[80px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={UKImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">
@@ -143,7 +143,7 @@ export default function ProductInfo(props: any) {
                                 }
                             </div>
                         </div>
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-[230px] h-[80px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={USImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">
@@ -164,7 +164,7 @@ export default function ProductInfo(props: any) {
                                 }
                             </div>
                         </div>
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-[230px] h-[80px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={UAImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">
@@ -185,7 +185,7 @@ export default function ProductInfo(props: any) {
                                 }
                             </div>
                         </div>
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-[230px] h-[80px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={CAImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">
@@ -206,7 +206,7 @@ export default function ProductInfo(props: any) {
                                 }
                             </div>
                         </div>
-                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-[230px] h-[80px]">
+                        <div className="border-[1px] p-[12px_16px] rounded-[8px] border-[#E5E3E7] bg-[#F4F4F4] dark:border-[#DFE1E71A] dark:bg-[#431D800A]  w-full md:w-[230px] h-[80px]">
                             <div className="flex flex-row items-center ">
                                 <img src={SPImg} alt="France" />
                                 <p className="text-[12px] text-[#393939] dark:text-white font-[500] ml-2">

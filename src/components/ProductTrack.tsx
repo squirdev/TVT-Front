@@ -12,7 +12,7 @@ export default function ProductTrack(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="flex flex-col items-center h-[240px] w-full dark:bg-black bg-[#FFFFFF01] border-[1px] border-solid dark:border-white dark:border-opacity-10 overflow-hidden  p-[26px]  rounded-[20px]  relative mt-3">
+        <div className="w-full md:w-[552px] h-[240px]  flex flex-col items-center dark:bg-black bg-[#FFFFFF01] border-[1px] border-solid dark:border-white dark:border-opacity-10 overflow-hidden  p-[26px]  rounded-[20px]  relative mt-3">
             <div className="text-[18px] font-[400] text-[#C7C3D2]">
                 Track each product with <span className="bg-gradient-to-r from from-[#BFE8FF] via-[#85FFFF] to-[#4E95FF] text-transparent bg-clip-text">
                     Solana

@@ -15,11 +15,11 @@ export default function ConnectServices(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="flex flex-col items-center justify-center gap-6 w-[1128px] rounded-[20px] h-[240px] bg-white border-[1px] border-white border-opacity-10 dark:bg-black mt-[27px]">
+        <div className="flex flex-col items-center justify-center gap-6 w-full md:w-[1128px] rounded-[20px] h-full  xl:h-[240px] bg-white border-[1px] border-white border-opacity-10 dark:bg-black mt-[27px] p-[20px]">
             <p className="text-white text-[19px] font-[400]">
                 Connect services
             </p>
-            <div className="flex flex-row items-center justify-between mt-[14px] gap-4">
+            <div className="grid grid-cols-2  md:grid-cols-3 xl:grid-cols-6 mt-[14px] gap-4">
                 <div className="relative flex flex-col items-center w-[157px] h-[140px] rounded-[20px] p-[15px] bg-[#0a0a0a] border-[1px] border-white border-opacity-10">
                     <p className="text-white test-[14px] font-[400] text-center  ">
                         Customer

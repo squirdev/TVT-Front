@@ -41,7 +41,7 @@ export default function CertifyProduct(props: any) {
     const colors = ["#06b6d4", "#3b82f6", "#ffffff"];
 
     return (
-        <div className="relative w-[552px] h-[300px] bg-[#f0eff0] overflow-hidden border border-solid border-[#d6d5da] dark:bg-transparent z-20 dark:border-white   dark:border-opacity-10 rounded-[20px] p-[16px]">
+        <div className="relative w-full md:w-[552px] h-[300px] bg-[#f0eff0] overflow-hidden border border-solid border-[#d6d5da] dark:bg-transparent z-20 dark:border-white   dark:border-opacity-10 rounded-[20px] p-[16px]">
             <div className="relative bg-gradient-to-r z-20 from from-[#BFE8FF] via-[#85FFFF] to-[#4E95FF] text-transparent bg-clip-text">
                 Certify your product on the blockchain
             </div>
@@ -50,9 +50,9 @@ export default function CertifyProduct(props: any) {
             </div>
             <div className="mt-[20px]">
                 <HoverBorderGradient
-                    containerClassName="rounded-full"
+                    containerClassName="rounded-[12px]"
                     as="button"
-                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
+                    className="dark:bg-black bg-white rounded-[12px] text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
                 >
                     Make a request
                     <img src={RightImg} alt="right" />

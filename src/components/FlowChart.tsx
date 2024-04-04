@@ -22,7 +22,7 @@ export default function FlowChart(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="flex flex-col items-center w-full bg-white dark:bg-black mt-[160px]">
+        <div className="flex flex-col items-center w-full bg-white dark:bg-black mt-[160px] px-[20px]">
             {
                 theme == "dark" ?
                     <img src={InfoDarkImg} alt="rise" />
@@ -31,30 +31,24 @@ export default function FlowChart(props: any) {
             }
             {
                 theme == "dark" ?
-                    <h1 className="w-[770px] flex flex-row items-start text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-white  to-[#B3ACBE]   text-transparent bg-clip-text">
+                    <h1 className="w-full md:w-[770px] flex flex-row items-start text-[28px] md:text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-white  to-[#B3ACBE]   text-transparent bg-clip-text">
                         Harness the power of blockchain to trace products globally
                     </h1>
                     :
-                    <h1 className="w-[770px] flex flex-row items-start text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-[#393939]  to-[#B3ACBE]   text-transparent bg-clip-text">
+                    <h1 className="w-full md:w-[770px] flex flex-row items-start text-[28px] md:text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-[#393939]  to-[#B3ACBE]   text-transparent bg-clip-text">
                         Harness the power of blockchain to trace products globally
                     </h1>
             }
             <div className="mt-[20px]">
                 <HoverBorderGradient
-                    containerClassName="rounded-full"
+                    containerClassName="rounded-[12px]"
                     as="button"
-                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2  flex-row  gap-4"
+                    className="dark:bg-black text-[12px] md:text-[14px] bg-white text-black dark:text-white rounded-[12px] flex items-center space-x-2  flex-row  gap-4"
                 >
                     Whitepaper
                     <img src={RightImg} alt="right" />
                 </HoverBorderGradient>
             </div>
-            {/* <NormalBtn className="mt-8">
-                <span className="flex flex-row items-center gap-4">
-                    Whitepaper
-                    <img src={RightImg} alt="right" />
-                </span>
-            </NormalBtn> */}
         </div>
     )
 }
