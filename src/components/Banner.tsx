@@ -8,13 +8,30 @@ import { useTheme } from "../context/ThemeProvider"
 import ChainImgDark from "../assets/chain_dark.svg";
 import ChainImgLight from "../assets/chain_light.svg";
 import { HoverBorderGradient } from "./common/HoverBorderGradient"
-import { motion } from "framer-motion"
-import { useRef } from "react"
+import { motion, useAnimation } from "framer-motion"
+import { useEffect, useRef } from "react"
+import { useInView } from "react-intersection-observer"
+
+
+const animateVariant = {
+    visible: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 1 } },
+    hidden: { y: 50, opacity: 0 }
+};
 
 export default function Banner(props: any) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1028px)' })
-    const { theme } = useTheme()
-    const scrollRef = useRef(null)
+    const controls = useAnimation();
+    const { theme } = useTheme();
+    const scrollRef = useRef(null);
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+        else {
+            controls.start('hidden');
+        }
+    }, [controls, inView]);
 
     return (
         <div className=" flex flex-col items-center w-full bg-white dark:bg-black ">
@@ -30,13 +47,19 @@ export default function Banner(props: any) {
                     Unmatched tracking for consumers and businesses at scale
                 </p>
             </div>
-            <motion.div ref={scrollRef}
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -50, opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ root: scrollRef }}
-                transition={{ delay: 0.5, duration: 1 }}>
+            <motion.div
+                ref={ref}
+                animate={controls}
+                initial="hidden"
+                variants={animateVariant}
+            // ref={scrollRef}
+            // initial={{ y: 50, opacity: 0 }}
+            // animate={{ y: 0, opacity: 1 }}
+            // exit={{ y: -50, opacity: 0 }}
+            // whileInView={{ opacity: 1 }}
+            // viewport={{ root: scrollRef }}
+            // transition={{ delay: 0.5, duration: 1 }}
+            >
                 <h1 className=" flex flex-row items-start text-[28px] md:text-[56px] font-[400] bg-gradient-to-b from-white  to-[#B3ACBE]  text-transparent bg-clip-text mt-[10px]">
                     Track Verify Trust
                     <span className="text-[10px] md:text-[14px] ml-2 md:ml-4 mt-2 md:mt-4">

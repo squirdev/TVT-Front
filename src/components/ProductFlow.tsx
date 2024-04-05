@@ -15,7 +15,7 @@ export default function ProductFlow(props: any) {
         <div className="w-full md:w-[552px] h-[240px]  dark:bg-black bg-white border-[1px] border-solid p-[26px] dark:border-white dark:border-opacity-10 overflow-hidden  rounded-[20px] dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center mt-[24px]">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <motion.div whileHover={{
-                x: -400,
+                x: -600,
                 transition: { duration: 2 },
             }} className="w-full relative h-full">
 
