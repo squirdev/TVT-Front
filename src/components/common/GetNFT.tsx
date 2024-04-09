@@ -4,7 +4,23 @@ import { motion } from "framer-motion"
 
 
 export default function GetNFT(props: any) {
-
+    const [isTapped, setIsTapped] = useState(false);
+    const variants = {
+        initial: {
+            y: 0,
+            transition: { duration: 1 },
+        },
+        tapped: {
+            y: -20,
+            transition: { duration: 1 },
+        },
+    };
+    const onTapStart = () => {
+        setIsTapped(true); // Set the tapped state to true when tapped
+        setTimeout(() => {
+            setIsTapped(false); // Reset tapped state after 3 seconds
+        }, 1000);
+    };
     return (
         <div className="flex flex-col items-center p-6 w-[360px] h-[300px] rounded-[20px] bg-black border-[1px] border-white border-opacity-10">
             <div className="text-[18px] font-[400] text-[#C7C3D2]">
@@ -15,10 +31,16 @@ export default function GetNFT(props: any) {
             <div className="text-[#7B7C8E] text-[11px] font-[400] uppercase mt-[10px]">
                 Authenticity NFT created
             </div>
-            <motion.div whileHover={{
-                y: -20,
-                transition: { duration: 1 },
-            }} className="w-[242px] min-h-[190px] overflow-hidden border-[1px] border-solid dark:border-white dark:border-opacity-10 rounded-[8px] mt-6 p-[8px_17px]">
+            <motion.div
+                onTap={onTapStart}
+                animate={isTapped ? "tapped" : "initial"}
+                variants={variants}
+                whileTap="tapped"
+                initial="initial"
+                whileHover={{
+                    y: -20,
+                    transition: { duration: 1 },
+                }} className="w-[242px] min-h-[190px] overflow-hidden border-[1px] border-solid dark:border-white dark:border-opacity-10 rounded-[8px] mt-6 p-[8px_17px]">
 
                 <div className="flex flex-row items-center gap-2 text-white text-[12px] font-[400]">
                     Certificate

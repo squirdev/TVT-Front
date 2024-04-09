@@ -29,6 +29,24 @@ export default function ProductInfo(props: any) {
     const SPMark = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0];
     const { theme } = useTheme()
 
+    const [isTapped, setIsTapped] = useState(false);
+    const variants = {
+        initial: {
+            y: 0,
+            transition: { duration: 1 },
+        },
+        tapped: {
+            y: -20,
+            transition: { duration: 1 },
+        },
+    };
+    const onTapStart = () => {
+        setIsTapped(true); // Set the tapped state to true when tapped
+        setTimeout(() => {
+            setIsTapped(false); // Reset tapped state after 3 seconds
+        }, 1000);
+    };
+
     return (
         <div className="w-full md:w-[552px] h-full md:h-[620px] bg-[#f0eff0]  border border-solid border-[#d6d5da] dark:bg-black dark:border-white   dark:border-opacity-10 rounded-[20px] overflow-hidden p-2 md:p-[16px]">
             <div className=" flex flex-row items-center w-full h-[26px] rounded-t-[12px]  border border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 p-2 gap-1">
@@ -48,10 +66,16 @@ export default function ProductInfo(props: any) {
                 </p>
             </div>
             <div className=" flex z-10 flex-col items-start w-full md:h-[509px] rounded-b-[12px] border border-t-[0px] border-solid border-[#d6d5da] k dark:border-white   dark:border-opacity-10 px-[16px] pt-1 gap-1">
-                <motion.div whileHover={{
-                    y: -20,
-                    transition: { duration: 1 },
-                }} className="z-10 relative w-full" >
+                <motion.div
+                    onTap={onTapStart}
+                    animate={isTapped ? "tapped" : "initial"}
+                    variants={variants}
+                    whileTap="tapped"
+                    initial="initial"
+                    whileHover={{
+                        y: -20,
+                        transition: { duration: 1 },
+                    }} className="z-10 relative w-full" >
                     <p className="text-[#393939] dark:text-white text-[16px] font-[400] z-10">
                         Product Number or Name
                     </p>

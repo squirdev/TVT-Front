@@ -1,7 +1,6 @@
 import { useMediaQuery } from "react-responsive"
 import { useTheme } from "../context/ThemeProvider"
-import NFT2Img from "../assets/nft-2.png";
-import NFT3Img from "../assets/nft-3.png";
+
 import ReputationScore from "./common/ReputationScore";
 import RegisterProduct from "./common/RetisterProduct";
 import GetNFT from "./common/GetNFT";
@@ -13,13 +12,8 @@ export default function OurTechnology(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="w-full flex flex-col items-center">
-            {
-                isTabletOrMobile ?
-                    <img src={NFT3Img} alt="nft" className="" />
-                    :
-                    <img src={NFT2Img} alt="nft" className="" />
-            }
+        <div className="w-full flex flex-col items-center" id='technology'>
+
             {
                 theme == "dark" ?
                     <h1 className=" flex flex-row items-start text-[30px] md:text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-white  to-[#B3ACBE]   text-transparent bg-clip-text">

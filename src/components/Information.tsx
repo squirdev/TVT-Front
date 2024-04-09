@@ -1,6 +1,8 @@
 import { useMediaQuery } from "react-responsive"
 import { useTheme } from "../context/ThemeProvider"
-import CheckImg from "../assets/check.svg"
+import CheckImg from "../assets/check.svg";
+import NFT2Img from "../assets/nft-2.png";
+import NFT3Img from "../assets/nft-3.png";
 import Particle from "./common/Particles";
 
 export default function Information(props: any) {
@@ -94,6 +96,12 @@ export default function Information(props: any) {
 
                 </div>
             </div>
+            {
+                isTabletOrMobile ?
+                    <img src={NFT3Img} alt="nft" className="" />
+                    :
+                    <img src={NFT2Img} alt="nft" className="" />
+            }
         </div>
     )
 }

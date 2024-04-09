@@ -11,19 +11,19 @@ export default function Header(props: any) {
     const menuList = [
         {
             name: "Products",
-            href: "products"
+            href: "/#products"
         },
         {
-            name: "Resources",
-            href: "resources"
+            name: "Technology",
+            href: "/#technology"
         },
         {
-            name: "Company",
-            href: "company"
+            name: "Token",
+            href: "/#token"
         },
         {
             name: "Whitepaper",
-            href: "whitepaper"
+            href: "/#"
         }
     ]
 

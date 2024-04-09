@@ -6,15 +6,19 @@ import LinkedinImg from "../assets/social/linkedin.svg";
 import DownFooterImg from "../assets/down_footer.svg"
 
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 export default function Footer(props: any) {
 
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1028px)' })
+    const [companyCollapsed, setCompanyCollapased] = useState(false);
+    const [resourcesCollapsed, setResourcesCollapased] = useState(false);
+
 
 
     return (
-        <div className="relative bg-footer w-full h-[400px] md:h-[513px] md:px-[360px] py-[50px]">
+        <div className="relative bg-footer bg-cover w-full  md:h-[513px] md:px-[360px] py-[50px]">
 
             <div className="flex flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-row items-center gap-7">
@@ -27,7 +31,9 @@ export default function Footer(props: any) {
 
                 <div className="flex flex-col md:flex-row items-start md:gap-[130px]">
                     <div className="flex flex-col items-start mt-[64px] md:mt-0">
-                        <div className="w-[120px] flex flex-row items-center justify-between gap-[20px]">
+                        <div className="w-[120px] flex flex-row items-center justify-between gap-[20px]" onClick={() => {
+                            setCompanyCollapased(!companyCollapsed);
+                        }}>
                             <a className="text-[18px] font-[500] text-white">
                                 Company
                             </a>
@@ -36,7 +42,21 @@ export default function Footer(props: any) {
                             }
                         </div>
                         {
-                            isTabletOrMobile ? <></> :
+                            isTabletOrMobile ? <>
+                                {
+                                    companyCollapsed && <>
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                            About Us
+                                        </a>
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                            Contact Us
+                                        </a>
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                            FAQs
+                                        </a>
+                                    </>
+                                }
+                            </> :
                                 <>
                                     <a className="text-[16px] font-[500] text-white mt-[24px]">
                                         About Us
@@ -52,7 +72,9 @@ export default function Footer(props: any) {
                     </div>
 
                     <div className="flex flex-col items-start mt-[20px] md:mt-0">
-                        <div className="w-[120px] flex flex-row items-center justify-between gap-[20px]">
+                        <div className="w-[120px] flex flex-row items-center justify-between gap-[20px]" onClick={() => {
+                            setResourcesCollapased(!resourcesCollapsed)
+                        }}>
                             <a className="text-[18px] font-[500] text-white">
                                 Resources
                             </a>
@@ -61,7 +83,19 @@ export default function Footer(props: any) {
                             }
                         </div>
                         {
-                            isTabletOrMobile ? <></> :
+                            isTabletOrMobile ? <>
+                                {
+                                    resourcesCollapsed &&
+                                    <>
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                            Roadmap
+                                        </a>
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                            Whitepaper
+                                        </a>
+                                    </>
+                                }
+                            </> :
                                 <>
                                     <a className="text-[16px] font-[500] text-white mt-[24px]">
                                         Roadmap

@@ -10,7 +10,7 @@ export default function Tokenomics(props: any) {
     const { theme } = useTheme()
 
     return (
-        <div className="w-full flex flex-col items-center mt-[150px] px-[20px]">
+        <section className="w-full flex flex-col items-center mt-[150px] px-[20px]" id="token" >
             {
                 theme == "dark" ?
                     <h1 className=" flex flex-row items-start text-[30px] md:text-[50px] text-center mt-[16px] font-[400] bg-gradient-to-b from-white  to-[#B3ACBE]   text-transparent bg-clip-text">
@@ -47,7 +47,7 @@ export default function Tokenomics(props: any) {
                             <p className="text-white font-[500] text-[14px]">
                                 Contract address:
                             </p>
-                            <p className="text-[#3275F8] max-w-[180px] font-[400] text-[12px] break-words">
+                            <p className="text-[#3275F8] max-w-[180px] md:max-w-full font-[400] text-[12px] break-words  md:break-normal	">
                                 2TUXo6TGPWjutmCdjzNt8DdWCMSNmyMgxpMkCFseXW9e
                             </p>
                             <img src={ClipboardImg} alt="clipboard" />
@@ -109,6 +109,6 @@ export default function Tokenomics(props: any) {
                     <img src={TVTCoinImg} alt="tvt-coin" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -9,7 +9,7 @@ import ChainImgDark from "../assets/chain_dark.svg";
 import ChainImgLight from "../assets/chain_light.svg";
 import { HoverBorderGradient } from "./common/HoverBorderGradient"
 import { motion, useAnimation } from "framer-motion"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
 
@@ -24,6 +24,17 @@ export default function Banner(props: any) {
     const { theme } = useTheme();
     const scrollRef = useRef(null);
     const [ref, inView] = useInView();
+    const [isTapped, setIsTapped] = useState(false);
+    const variants = {
+        initial: { scale: 1, transition: { duration: 1 } },
+        tapped: { scale: 1.2, transition: { duration: 1 } },
+    };
+    const onTapStart = () => {
+        setIsTapped(true); // Set the tapped state to true when tapped
+        setTimeout(() => {
+            setIsTapped(false); // Reset tapped state after 3 seconds
+        }, 1000);
+    };
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -83,14 +94,20 @@ export default function Banner(props: any) {
                     <img src={RightImg} alt="right" />
                 </HoverBorderGradient>
             </motion.div>
-            <motion.div whileHover={{
-                scale: !isTabletOrMobile ? 1.2 : 1.1,
-                transition: { duration: 1 },
-            }} className="flex flex-col items-center w-[340px] md:w-[600px]">
+            <motion.div
+                onTap={onTapStart}
+                animate={isTapped ? "tapped" : "initial"}
+                variants={variants}
+                whileTap="tapped"
+                initial="initial"
+                whileHover={{
+                    scale: !isTabletOrMobile ? 1.2 : 1.1,
+                    transition: { duration: 1 },
+                }} className="flex flex-col items-center w-[340px] md:w-[600px]">
                 <img src={TVTImg} alt="tvt" className="mt-[80px]" />
                 <div className="w-full  flex flex-row items-center justify-evenly mt-[40px] gap-[60px]">
                     <p className="font-Conthrax text-[12px] md:text-[23px] font-[600] bg-gradient-to-r from-[#124968] via-[#3AE7ED]  to-[#139BD7]  text-transparent bg-clip-text">
-                        P O W E R E D  B Y
+                        P&nbsp;&nbsp;O&nbsp;&nbsp;W&nbsp;&nbsp;E&nbsp;&nbsp;R&nbsp;&nbsp;E&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;Y
                     </p>
                     <img src={SolanaImg} className="w-[94px] h-[12px] md:w-[160px] md:h-[24px]" />
                 </div>
