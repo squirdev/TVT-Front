@@ -45,26 +45,26 @@ export default function Footer(props: any) {
                             isTabletOrMobile ? <>
                                 {
                                     companyCollapsed && <>
-                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/#'} target={'_blank'} rel={'noreferrer'}>
                                             About Us
                                         </a>
-                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                             Contact Us
                                         </a>
-                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                             FAQs
                                         </a>
                                     </>
                                 }
                             </> :
                                 <>
-                                    <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                    <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/#'} target={'_blank'} rel={'noreferrer'}>
                                         About Us
                                     </a>
-                                    <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                    <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                         Contact Us
                                     </a>
-                                    <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                    <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                         FAQs
                                     </a>
                                 </>
@@ -87,20 +87,20 @@ export default function Footer(props: any) {
                                 {
                                     resourcesCollapsed &&
                                     <>
-                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                             Roadmap
                                         </a>
-                                        <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                        <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/WhitePaper.pdf'} target={'_blank'} rel={'noreferrer'}>
                                             Whitepaper
                                         </a>
                                     </>
                                 }
                             </> :
                                 <>
-                                    <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                    <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/'} target={'_blank'} rel={'noreferrer'}>
                                         Roadmap
                                     </a>
-                                    <a className="text-[16px] font-[500] text-white mt-[24px]">
+                                    <a className="text-[16px] font-[500] text-white mt-[24px]" href={'/WhitePaper.pdf'} target={'_blank'} rel={'noreferrer'}>
                                         Whitepaper
                                     </a>
                                 </>}

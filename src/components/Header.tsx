@@ -23,7 +23,7 @@ export default function Header(props: any) {
         },
         {
             name: "Whitepaper",
-            href: "/#"
+            href: "/WhitePaper.pdf"
         }
     ]
 
@@ -41,10 +41,16 @@ export default function Header(props: any) {
                             {
                                 menuList.map((item, index) => {
                                     return (
-                                        <li key={index} className="flex flex-col justify-center">
-                                            <a href={item.href} className="text-white hover:text-white text-[14px] font-[500] font-">
-                                                {item.name}
-                                            </a>
+                                        <li key={index} className="flex flex-col justify-center">{
+                                            item.name == "Whitepaper" ?
+                                                <a href={item.href} target={'_blank'} rel={'noreferrer'} className="text-white hover:text-white text-[14px] font-[500] font-">
+                                                    {item.name}
+                                                </a>
+                                                :
+                                                <a href={item.href} className="text-white hover:text-white text-[14px] font-[500] font-">
+                                                    {item.name}
+                                                </a>
+                                        }
                                         </li>
                                     )
                                 })

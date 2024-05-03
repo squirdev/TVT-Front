@@ -21,6 +21,10 @@ export default function FlowChart(props: any) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1028px)' })
     const { theme } = useTheme()
 
+    const openWhitePaper = () => {
+        window.open("https://trackverifytrust.com/WhitePaper.pdf")
+    }
+
     return (
         <div className="flex flex-col items-center w-full bg-white dark:bg-black mt-[160px] px-[20px]">
             {
@@ -41,6 +45,7 @@ export default function FlowChart(props: any) {
             }
             <div className="mt-[20px]">
                 <HoverBorderGradient
+                    onClick={openWhitePaper}
                     containerClassName="rounded-[12px]"
                     as="button"
                     className="dark:bg-black text-[12px] md:text-[14px] bg-white text-black dark:text-white rounded-[12px] flex items-center space-x-2  flex-row  gap-4"

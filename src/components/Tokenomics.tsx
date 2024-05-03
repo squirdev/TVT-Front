@@ -9,6 +9,11 @@ export default function Tokenomics(props: any) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1028px)' })
     const { theme } = useTheme()
 
+    const openWhitePaper = () => {
+        window.open("https://trackverifytrust.com/WhitePaper.pdf")
+    }
+
+
     return (
         <section className="w-full flex flex-col items-center mt-[150px] px-[20px]" id="token" >
             {
@@ -89,6 +94,7 @@ export default function Tokenomics(props: any) {
                         </div>
                         <div className="flex flex-row items-center justify-center gap-[30px] mt-[28px]">
                             <HoverBorderGradient
+                                onClick={openWhitePaper}
                                 containerClassName="rounded-[12px]"
                                 as="button"
                                 className="w-[140px] md:w-[180px] flex flex-col items-center rounded-[12px]  justify-center dark:bg-black bg-white text-black dark:text-white  space-x-2  gap-4"
